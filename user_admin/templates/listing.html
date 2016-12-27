@@ -1,0 +1,61 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+
+<table id="myTable" class="display">
+	<thead>
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Mobile
+			</th>
+			<th>
+				Age
+			</th>
+			<th>
+				Date of Birth
+			</th>
+			<th>
+				Location
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for user in users %}
+			<tr>
+				<td>
+					{{ user.user.first_name|title }} {{ user.user.last_name|title }}
+				</td>
+				<td>
+					{{ user.user.email }}
+				</td>
+				<td>
+					{{ user.mobile|default:"" }}
+				</td>
+				<td>
+					{{ user.age|default:"" }}
+				</td>
+				<td>
+					{{ user.dob|date:"d F Y"|default:"" }}
+				</td>
+				<td>
+					{{ user.user_location|default:"" }}
+				</td>
+				<td>
+					<a href="/edit/{{ user.id }}">Edit</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+
+</table>
+{% endblock %}
