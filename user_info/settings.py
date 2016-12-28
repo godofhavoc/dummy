@@ -122,4 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-GOOGLE_PLACES_API_KEY = 'AIzaSyC4UajVvpfiFLljmS4b_i7iXqLghWjrCkg'
+GOOGLE_PLACES_API_KEY = 'enivron_variable'
